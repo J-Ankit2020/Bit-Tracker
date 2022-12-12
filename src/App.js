@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import CoinPage from './pages/CoinPage';
 import { ThemeProvider, createTheme } from '@material-ui/core';
 import Footer from './components/Footer';
+import Alert from './components/Alert';
 function App() {
   const useStyles = makeStyles(() => ({
     App: {
@@ -35,6 +36,7 @@ function App() {
           </Routes>
           <Footer />
         </div>
+        <Alert />
       </ThemeProvider>
     </BrowserRouter>
   );

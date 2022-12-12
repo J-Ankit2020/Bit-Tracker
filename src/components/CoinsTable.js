@@ -34,20 +34,11 @@ const useStyles = makeStyles(() => ({
     }
 }))
 const CoinsTable = () => {
-    const [coins, setCoins] = useState([]);
     const [page, setPage] = useState(1)
     const classes = useStyles();
-    const [loading, setLoading] = useState(false);
     const [search, setsearch] = useState('')
-    const { currency, symbol } = CryptoState();
+    const { currency, symbol, coins, loading, fetchCoins } = CryptoState();
     const navigate = useNavigate();
-    const fetchCoins = async () => {
-        const response = await fetch(CoinList(currency));
-        setLoading(true);
-        const data = await response.json();
-        setCoins(data);
-        setLoading(false);
-    };
     useEffect(() => {
         fetchCoins();
     }, [currency]);
@@ -137,7 +128,7 @@ const CoinsTable = () => {
                                             <TableCell align='right'>
                                                 {symbol}{" "}{
                                                     numberWithCommas(row.market_cap.toString().slice(0, -6))
-                                                }m
+                                                }
                                             </TableCell>
                                         </TableRow>
                                     );
