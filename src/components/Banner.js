@@ -31,7 +31,7 @@ const Banner = () => {
                         marginBottom: 15,
                         fontFamily: 'Montserrat',
                     }}>
-                        Bit Tracker
+                    Crypto Seer
                     </Typography>
                     <Typography variant='subtitle2' style={{
                         color: 'darkgray',
